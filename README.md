@@ -76,6 +76,10 @@ The best way to share your code with us through a public Github repository, but 
 ## Design Overview
 ![Screenshot 2021-08-25 at 11 01 28](https://user-images.githubusercontent.com/2313592/130771680-4870f1f2-a032-4893-a02b-9670fce949e8.png)
 
+### With results
+![Screenshot 2021-08-25 at 12 00 09](https://user-images.githubusercontent.com/2313592/130779252-502d34f4-71d7-4709-82ba-9982e5e64600.png)
+
+
 ### Open filters
 ![Screenshot 2021-08-25 at 11 01 40](https://user-images.githubusercontent.com/2313592/130771681-bddd1972-49d6-430a-9028-3bd29d51f674.png)
 
