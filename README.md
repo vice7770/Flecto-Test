@@ -2,6 +2,8 @@
 
 **TL;DR:** Recreate, using whichever technology (or combination of technologies), our existing "search-bar"
 
+![Screenshot 2021-08-25 at 11 01 10](https://user-images.githubusercontent.com/2313592/130771676-6d6374c5-75c0-4ce8-87aa-66368c79b860.png)
+
 ## Objectives
 
 We would like to challenge you to recreate, and even improve upon, our existing search-bar component (you can see it working [here](https://rnters.com)) whilst supporting it's existing set of behaviours;
@@ -72,9 +74,6 @@ Will return:
 The best way to share your code with us through a public Github repository, but if you prefer any other method of delivery just let us know and be sure we have all the necessary instructions as to be able to build and run your solution;
 
 ## Design Overview
-![Screenshot 2021-08-25 at 11 01 10](https://user-images.githubusercontent.com/2313592/130771676-6d6374c5-75c0-4ce8-87aa-66368c79b860.png)
-
-### Default
 ![Screenshot 2021-08-25 at 11 01 28](https://user-images.githubusercontent.com/2313592/130771680-4870f1f2-a032-4893-a02b-9670fce949e8.png)
 
 ### Open filters
