@@ -1,54 +1,55 @@
-# Rnters Frontend
+# Rnters: Frontend Exercise
 
-Welcome !!!!
+Welcome!
 
-We are happy to know you want to join our team 🥳
-And we want to know you better !! 
+We are more than happy to know you want to join our team. We’d like to invite you to our technical challenge where you can showcase all your talents.
 
-The first step, we have a tiny challenge for you.
+We know this we’ll be a walk-in-the-park and respect your schedule so rest assured that it won’t take too much of your spare time.
 
-# Overview
+## **Overview**
 
-The main goal of this challenge is a single page with listing information ( table or cards) with pagination.
+The main goal of this exercise is for you to do a single page showing a paginated list (either as a table, list or cards) of weird-named planets from Star Wars. You’ll consume a simple API from [SWAPI](https://swapi.dev/documentation#intro) which you’ll then treat and show.
 
-You can use any components library you like.
+Feel free to use any components’ library and any Jedi mind tricks you like.
 
-### 💪 Let's go!!
+Let's go!
 
-## Task requirements
+## **Task requirements**
 
 The main requirements are:
 
-- The user should be able to search for star wars planets
-- The user should be able to paginate
-- The user should be able to detail about the planet selected.
+- The user should be able to search for planets;
+- The user should be able to paginate;
+- The user should be able to see details about the selected planet.
 
-API Documentation: https://swapi.dev/documentation#intro
+API Documentation: [https://swapi.dev/documentation#intro](https://swapi.dev/documentation#intro)
 
-## What we expect 
+## **What we expect**
 
-🔥 React and TypeScript
+🔥 React and TypeScript
 
-🔥 Unit test
+🔥 Unit test
 
-💅 SCSS ( we also love styled-components and emotion )
+💅 SCSS ( we also love styled-components and emotion)
 
-🔥 Clear readme.md
+🔥 Clear readme.md
 
-## We loved to see in your project
+## What w**e’d love to see**
 
-🔥 NextJS
+🔥 NextJS
 
-🔥 React-Query / SWR
+🔥 React-Query / SWR
 
-## Do you already finish ?
+## What would be nice
 
 If you have time, this can have in your project:
 
-🎨 Responsive layout 
+🎨 Responsive layout
 
-🧑‍🔬 Atomic Design
+🧑‍🔬 Atomic Design
 
-## Additional information
+## **Additional information**
 
-We wish you the best of luck !
+Feel free to reach out if you have any question and don’t hesitate regardless of how simple or silly your questions might look like. We are here to provide you all the conditions for you to shine ✨
+
+There’s no deadline only good sense.
