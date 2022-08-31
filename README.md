@@ -1,4 +1,4 @@
-# Rnters: Frontend Exercise
+# Flecto: Frontend Exercise
 
 Welcome!
 
