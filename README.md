@@ -20,6 +20,9 @@ The main requirements are:
 
 API Documentation: https://swapi.dev/documentation#intro
 
+## **Delivery instructions**
+Fork this repository to your own github profile and use it to develop your solution. After done, just send us the link for your forked repository.
+
 ## **What we expect**
 ⚛️ React and TypeScript
 
