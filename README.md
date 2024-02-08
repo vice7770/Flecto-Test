@@ -23,7 +23,6 @@ API Documentation: https://swapi.dev/documentation#intro
 ⚛️ React and TypeScript
 
 🐞 Unit / integration tests
-
 💅 A nice design using CSS
 
 📄 Clear README.md
