@@ -1,6 +1,7 @@
 # Flecto: Frontend Exercise
 
 Welcome!
+
 Following our previous conversation, we’d like to invite you to our technical challenge where you can showcase all your talents. We know this we’ll be a walk-in-the-park and respect your schedule so rest assured that it won’t take too much of your spare time.
 
 ## **Overview**
