@@ -21,16 +21,22 @@ API Documentation: https://swapi.dev/documentation#intro
 
 ## **What we expect**
 ⚛️ React and TypeScript
+
 🐞 Unit / integration tests
+
 💅 A nice design using CSS
+
 📄 Clear README.md
 
 ## What w**e’d love to see**
+
 🔥 NextJS
+
 🔥 TanStack Query / SWR
 
 ## What would be nice
 If you have the time, you might want to add these to your project:
+
 🎨 Responsive layout
 
 ## **Additional information**
