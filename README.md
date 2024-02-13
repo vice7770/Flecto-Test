@@ -43,6 +43,8 @@ If you have the time, you might want to add these to your project:
 
 🎨 Responsive layout
 
+📱 Mobile suppport
+
 ## **Additional information**
 Feel free to reach out if you have any question and don’t hesitate regardless of how simple or silly your questions might look like. We are here to provide you all the conditions for you to shine ✨
 
