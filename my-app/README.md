@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# React + TypeScript + Vite
 
-## Getting Started
+Some Explanation for this project:
 
-First, run the development server:
+Thinking of developing a table with planets with information. All planets will be fetch and it will have virtualization on clientside. Clicking on the card will open the planets details.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This project will be done with nextjs and here some libraries to note:
+- CSS styling will be with tailwind
+- Components will be shadcn
+- State managment will be React-Query, load/error animations for the elements.
+- Tanstack table for the table, with virtualization
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+MileStones:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Get the data to fetch and necessary api calls with types.(All planets and details)
+UI for Main Page, this includes table and virtualization
+Routing, as well as Details page UI.
+Working Query states for both Home and De tails, with its individual requests and queryKeys.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Optional if i have time:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Images for the planets types.
+Mobile support.
