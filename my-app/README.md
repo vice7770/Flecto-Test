@@ -12,7 +12,7 @@ This project will be done with nextjs and here some libraries to note:
 
 MileStones:
 
-Get the data to fetch and necessary api calls with types.(All planets and details)
+X Get the data to fetch and necessary api calls with types.(All planets and details)
 UI for Main Page, this includes table and virtualization
 Routing, as well as Details page UI.
 Working Query states for both Home and De tails, with its individual requests and queryKeys.
