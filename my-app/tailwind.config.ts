@@ -53,6 +53,19 @@ const config: Config = {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
+		keyframes: {
+			typing: {
+				'0%': { width: '0%' },
+				'100%': { width: '100%' },
+			},
+			blink: {
+				'0%, 100%': { borderColor: 'transparent' },
+				'50%': { borderColor: 'green' },
+			},
+			},
+			animation: {
+			typing: 'typing 2s steps(40, end), blink .75s step-end infinite',
+			},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
