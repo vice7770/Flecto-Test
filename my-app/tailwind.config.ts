@@ -11,8 +11,9 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
+			background: '#000000', // Black background
+			foreground: '#00FF00', // Green text
+			listItem: '#00FF00', // Green list items
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'

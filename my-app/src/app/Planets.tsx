@@ -1,16 +1,15 @@
 import React from 'react';
-import PlanetsList from './PlanetsList';
+import PlanetsList from './PlanetsTable';
 import { getPlanets } from './api/planets';
 
-const Planets = async () => {
-    const data = getPlanets();
-    const planets = await data;
-    
+interface PlanetsProps {
+    page: string;
+}
+const Planets = async (props : PlanetsProps) => {
+    const { page } = props;
+    const planets = await getPlanets(page);
     return (
-        <div>
-            <h1>Planets</h1>
-            <PlanetsList planets={planets} />
-        </div>
+        <PlanetsList planets={planets} />
     );
 }
 

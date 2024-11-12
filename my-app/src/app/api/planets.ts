@@ -7,8 +7,8 @@ const options = {
     }
 };
 
-export const getPlanets = async (): Promise<PlanetsResponse> => {
-    const url = `https://swapi.dev/api/planets/`;
+export const getPlanets = async (page: string): Promise<PlanetsResponse> => {
+    const url = `https://swapi.dev/api/planets?page=${page}`;
     const response = await fetch(url, options);
     if (!response.ok) {
       throw new Error('Network response was not ok');
