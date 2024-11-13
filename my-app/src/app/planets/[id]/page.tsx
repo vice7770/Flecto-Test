@@ -17,15 +17,6 @@ export default async function Page({ params }: PageProps) {
         <h1 className="text-4xl font-bold mb-4 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-foreground">
           {planet.name}
         </h1>
-        <p className="text-lg mb-2 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-foreground">
-          Population: {planet.population}
-        </p>
-        <p className="text-lg mb-2 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-foreground">
-          Climate: {planet.climate}
-        </p>
-        <p className="text-lg mb-2 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-foreground">
-          Terrain: {planet.terrain}
-        </p>
         {Object.entries(planet).map(([key, value]) =>
             {
                 if(key === 'created' || key === 'edited') return;

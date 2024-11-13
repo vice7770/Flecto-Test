@@ -7,9 +7,8 @@ interface PlanetsProps {
 }
 const Planets = async (props : PlanetsProps) => {
     const { page } = props;
-    const planets = await getPlanets(page);
     return (
-        <PlanetsList planets={planets} />
+        <PlanetsList page={page}/>
     );
 }
 
