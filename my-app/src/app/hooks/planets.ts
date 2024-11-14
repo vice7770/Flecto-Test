@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getPlanets, getPlanetDetails } from '@/app/api/planets';
+import { getPlanets } from '@/app/api/planets';
 import { PlanetsResponse } from '@/app/types/api';
 
 interface UseGetPlanetsProps {

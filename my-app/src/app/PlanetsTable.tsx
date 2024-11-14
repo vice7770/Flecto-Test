@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect, useMemo, useState } from "react";
-import { Planet, PlanetsResponse } from "./types/api";
+import React, { use, useEffect, useMemo, useState } from "react";
+import { Planet } from "./types/api";
 import {
   createColumnHelper,
   flexRender,
@@ -11,12 +11,11 @@ import {
 } from "@tanstack/react-table";
 import { QueryClientProvider } from '@tanstack/react-query';
 import { openSansCell, openSansHeader } from "@/lib/fonts";
-import { usePathname, useRouter } from "next/navigation";
-import { getPlanets } from "./api/planets";
-import { useQuery } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 import queryClient from "@/lib/queryClient";
 import { useSearchParams } from 'next/navigation'
 import { useGetPlanets } from "./hooks/planets";
+import { usePlanetsActions } from "./stores/planets";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
@@ -25,6 +24,8 @@ const PlanetsTableComponent = () => {
   const searchParams = useSearchParams();
   // const pathname = usePathname();
   // const { replace } = useRouter();
+
+  const { setIsSearchLoading } = usePlanetsActions();
 
   const searchInputValue = searchParams.get("search")?.toString();
   const page = searchParams.get("page")?.toString();
@@ -47,6 +48,11 @@ const PlanetsTableComponent = () => {
     pageIndex: pagination.pageIndex,
     searchInputValue: searchInputValue || '',
   });
+
+  useEffect(() => {
+    setIsSearchLoading(isLoading);
+  }
+  , [isLoading]);
   
   const router = useRouter();
   const columnHelper = createColumnHelper<Planet>();

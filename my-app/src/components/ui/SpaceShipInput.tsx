@@ -1,13 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import { Input } from "@/components/ui/input";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import { usePlanetsSearchIsLoading } from "@/app/stores/planets";
 
 function SpaceShipInput() {
   const searchParams = useSearchParams();
   // const pathname = usePathname();
   // const { replace } = useRouter();
+
+  const isSearchLoading = usePlanetsSearchIsLoading();
 
   function handleSearch(search: string) {
     const params = new URLSearchParams(searchParams);
@@ -56,7 +58,7 @@ function SpaceShipInput() {
                 </div>
               </div>
               <div className="mt-4 text-green-400 text-sm font-mono">
-                {">"} {searchInputValue ? "Processing..." : "Awaiting input"}
+                {">"} {isSearchLoading ? "Processing..." : "Awaiting input"}
               </div>
             </div>
             <div>
