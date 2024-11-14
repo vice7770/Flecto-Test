@@ -1,6 +1,5 @@
 import React from 'react';
 import PlanetsList from './PlanetsTable';
-import { getPlanets } from './api/planets';
 
 interface PlanetsProps {
     page: string;
@@ -8,7 +7,7 @@ interface PlanetsProps {
 const Planets = async (props : PlanetsProps) => {
     const { page } = props;
     return (
-        <PlanetsList page={page}/>
+        <PlanetsList/>
     );
 }
 

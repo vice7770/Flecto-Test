@@ -16,6 +16,7 @@ import { getPlanets } from "./api/planets";
 import { useQuery } from "@tanstack/react-query";
 import queryClient from "@/lib/queryClient";
 import { useSearchParams } from 'next/navigation'
+import { useGetPlanets } from "./hooks/planets";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
@@ -42,16 +43,9 @@ const PlanetsTableComponent = () => {
     }
   }, [page]);
 
-  const {
-    data: planets,
-    isLoading,
-    isError,
-  } = useQuery<PlanetsResponse>({
-    queryKey: ["planets", pagination.pageIndex + 1, searchInputValue],
-    queryFn: () => getPlanets({
-      search: searchInputValue || '',
-      page: (pagination.pageIndex + 1).toString(),
-    }),
+  const { data: planets, isLoading, isError } = useGetPlanets({
+    pageIndex: pagination.pageIndex,
+    searchInputValue: searchInputValue || '',
   });
   
   const router = useRouter();
