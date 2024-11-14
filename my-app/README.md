@@ -15,10 +15,16 @@ MileStones:
 X Get the data to fetch and necessary api calls with types.(All planets and details)
 X Routing, as well as Details page UI.
 X UI for Main Page, this includes table
-Working Query states for both Home and Details, with its individual requests and queryKeys.
-
+X Working Query states for both Home and Details, with its individual requests and queryKeys.
+X Search
 
 Optional if i have time:
 
 Images for the planets types.
 Mobile support.
+
+Tecnical notes:
+
+The table and search will be client side components, pagination will use react query to manage and cache the data.
+Details will be pure server component.
+Search and table will communicate via search params.
