@@ -1,8 +1,22 @@
-# React + TypeScript + Vite
+# React + TypeScript + Next.js Project
 
-Some Explanation for this project:
+## Project Overview
 
-Thinking of developing a table with planets with information. All planets will be fetch and it will have virtualization on clientside. Clicking on the card will open the planets details.
+This project is built using React, TypeScript, and Next.js. It features a Star Wars-themed application that displays information about planets, including details about their residents and films. The application is designed to be mobile-friendly and uses various modern libraries and tools for state management, styling, and data fetching.
+
+## Technical Notes
+
+- **Client-Side Components**: The table and search components are client-side components.
+- **Pagination**: React Query is used to manage and cache the data for pagination.
+- **Server-Side Components**: The details page is a pure server-side component.
+- **Shared Search Params**: The search and table components share search parameters.
+- **Loading State**: The loading state of the planets hook is exposed via Zustand and used in the search component.
+- **Promise.all**: Used to fetch all movies and residents in the details screen (server-side).
+
+## Setup
+npm i
+npm run dev
+make sure youn are at localhost:3000
 
 This project will be done with nextjs and here some libraries to note:
 - CSS styling will be with tailwind
@@ -22,11 +36,3 @@ Optional if i have time:
 
 Images for the planets types.
 X Mobile support.
-
-Tecnical notes:
-
-The table and search will be client side components, pagination will use react query to manage and cache the data.
-Details will be pure server component.
-Search and table will share searchParams
-Loading State of the Planets hook will be exposed via zustand, and will be used in search component.
-Promise all is used to get all movies and all residents, in the details screen(serverside).
