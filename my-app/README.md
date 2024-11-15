@@ -27,4 +27,6 @@ Tecnical notes:
 
 The table and search will be client side components, pagination will use react query to manage and cache the data.
 Details will be pure server component.
-Search and table will communicate via search params.
+Search and table will share searchParams
+Loading State of the Planets hook will be exposed via zustand, and will be used in search component.
+Promise all is used to get all movies and all residents, in the detaikls screen(serverside).
