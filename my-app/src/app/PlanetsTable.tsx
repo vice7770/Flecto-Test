@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Planet } from "./types/api";
 import {
   createColumnHelper,
@@ -22,9 +22,6 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const PlanetsTableComponent = () => {
 
   const searchParams = useSearchParams();
-  // const pathname = usePathname();
-  // const { replace } = useRouter();
-
   const { setIsSearchLoading } = usePlanetsActions();
 
   const searchInputValue = searchParams.get("search")?.toString();
@@ -51,8 +48,7 @@ const PlanetsTableComponent = () => {
 
   useEffect(() => {
     setIsSearchLoading(isLoading);
-  }
-  , [isLoading]);
+  }, [isLoading]);
   
   const router = useRouter();
   const columnHelper = createColumnHelper<Planet>();
@@ -65,7 +61,7 @@ const PlanetsTableComponent = () => {
     return [
       columnHelper.accessor("name", {
         cell: (info) => info.getValue(),
-        header: () => <span>City</span>,
+        header: () => <span>Name</span>,
       }),
       columnHelper.accessor("climate", {
         cell: (info) => <span>{info.getValue()}</span>,
@@ -79,10 +75,7 @@ const PlanetsTableComponent = () => {
         cell: (info) => (
           <span>
             {info.getValue() !== "unknown"
-              ? Number(info.getValue()) / 1000000 +
-                "Million, " +
-                info.row.original.population.length +
-                " races"
+              ? Number(info.getValue()) / 1000000 + " Million"
               : info.getValue()}
           </span>
         ),
@@ -98,13 +91,11 @@ const PlanetsTableComponent = () => {
   const handlePageChange = (pageIndex: number) => {
     const params = new URLSearchParams(searchParams);
     const page = pageIndex + 1;
-    console.log("pageindex", page);
     if (page) {
       params.set('page', page.toString());
     } else {
       params.delete('page');
     }
-    // replace(`${pathname}?${params.toString()}`);
     window.history.pushState(null, '', `?${params.toString()}`);
   };
 
@@ -120,54 +111,59 @@ const PlanetsTableComponent = () => {
     onPaginationChange: setPagination,
     manualPagination: true,
   });
-  if (isLoading) return <div className="flex w-full h-[500px] justify-center items-center ">Loading...</div>;
-  if (isError) return <div className="flex w-full h-full justify-center items-center ">Error loading data</div>;
+
+  if (isLoading) return <div className="flex w-full h-[500px] justify-center items-center">Loading...</div>;
+  if (isError) return <div className="flex w-full h-full justify-center items-center">Error loading data</div>;
 
   return (
-    <div className="flex flex-col w-full h-full overflow-auto rounded-3xl border-4">
-      { !planets?.results.length ? <div className="flex w-full h-full justify-center items-center ">No data found</div> 
-      :
-      <>
-        <table className="w-full bg-background border-separate border-spacing-0">
-          <thead className="justify-center">
-            {table.getHeaderGroups().map((headerGroup) => (
-              <tr className="" key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
-                  <th
-                    className={`border-b-4 py-4 text-white text-center text-lg ${openSansHeader.className}`}
-                    key={header.id}
-                  >
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </th>
+    <div className="flex flex-col w-full h-full overflow-auto rounded-3xl border-4 p-4 md:p-8">
+      {!planets?.results.length ? (
+        <div className="flex w-full h-full justify-center items-center">No data found</div>
+      ) : (
+        <>
+          <div className="overflow-x-auto">
+            <table className="w-full bg-background border-separate border-spacing-0">
+              <thead className="justify-center">
+                {table.getHeaderGroups().map((headerGroup) => (
+                  <tr className="" key={headerGroup.id}>
+                    {headerGroup.headers.map((header) => (
+                      <th
+                        className={`border-b-4 py-2 md:py-4 text-white text-center text-sm md:text-lg ${openSansHeader.className}`}
+                        key={header.id}
+                      >
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(header.column.columnDef.header, header.getContext())}
+                      </th>
+                    ))}
+                  </tr>
                 ))}
-              </tr>
-            ))}
-          </thead>
-          <tbody>
-            {table.getRowModel().rows.map((row) => (
-              <tr key={row.id} className="hover:bg-foreground" onClick={() => {
-                  router.push(`${basePath}${extractPathnameFromUrl(row.original.url)}`);
-                }} >
-                {row.getVisibleCells().map((cell) => (
-                  <td
-                    className={`p-3 text-white text-center ${openSansCell.className}`}
-                    key={cell.id}
+              </thead>
+              <tbody>
+                {table.getRowModel().rows.map((row) => (
+                  <tr
+                    key={row.id}
+                    className="hover:bg-foreground"
+                    onClick={() => {
+                      router.push(`${basePath}${extractPathnameFromUrl(row.original.url)}`);
+                    }}
                   >
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </td>
+                    {row.getVisibleCells().map((cell) => (
+                      <td
+                        className={`p-2 md:p-3 text-white text-center text-sm md:text-lg ${openSansCell.className}`}
+                        key={cell.id}
+                      >
+                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      </td>
+                    ))}
+                  </tr>
                 ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <div className="flex w-full items-center justify-evenly gap-2 p-4">
-          <div className="flex w-1/2 justify-evenly">
-            <button
+              </tbody>
+            </table>
+          </div>
+          <div className="flex w-full items-center justify-evenly gap-2 p-4">
+            <div className="flex w-1/2 justify-evenly">
+              <button
                 className="flex border rounded p-1 w-7 h-7 items-center justify-center"
                 onClick={() => {
                   table.setPageIndex(0);
@@ -207,34 +203,34 @@ const PlanetsTableComponent = () => {
               >
                 {table.getCanNextPage() ? '>>' : ''}
               </button>
+            </div>
+            <div className="flex">
+              <span className="flex items-center gap-1">
+                <div>Page</div>
+                <strong>
+                  {table.getState().pagination.pageIndex + 1} of{' '}
+                  {table.getPageCount().toLocaleString()}
+                </strong>
+              </span>
+              <span className="flex items-center gap-1">
+                | Go to page:
+                <input
+                  type="number"
+                  min="1"
+                  max={table.getPageCount()}
+                  defaultValue={table.getState().pagination.pageIndex + 1}
+                  onChange={e => {
+                    const page = e.target.value ? Number(e.target.value) - 1 : 0;
+                    table.setPageIndex(page);
+                    handlePageChange(page);
+                  }}
+                  className="border p-1 rounded w-16"
+                />
+              </span>
+            </div>
           </div>
-          <div className="flex">
-            <span className="flex items-center gap-1">
-              <div>Page</div>
-              <strong>
-                {table.getState().pagination.pageIndex + 1} of{' '}
-                {table.getPageCount().toLocaleString()}
-              </strong>
-            </span>
-            <span className="flex items-center gap-1">
-              | Go to page:
-              <input
-                type="number"
-                min="1"
-                max={table.getPageCount()}
-                defaultValue={table.getState().pagination.pageIndex + 1}
-                onChange={e => {
-                  const page = e.target.value ? Number(e.target.value) - 1 : 0
-                  table.setPageIndex(page)
-                  handlePageChange(page)
-                }}
-                className="border p-1 rounded w-16"
-              />
-            </span>
-          </div>
-        </div>
-      </>
-      }
+        </>
+      )}
     </div>
   );
 };
