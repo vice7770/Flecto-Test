@@ -21,7 +21,7 @@ X Search
 Optional if i have time:
 
 Images for the planets types.
-Mobile support.
+X Mobile support.
 
 Tecnical notes:
 
