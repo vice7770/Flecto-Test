@@ -29,4 +29,4 @@ The table and search will be client side components, pagination will use react q
 Details will be pure server component.
 Search and table will share searchParams
 Loading State of the Planets hook will be exposed via zustand, and will be used in search component.
-Promise all is used to get all movies and all residents, in the detaikls screen(serverside).
+Promise all is used to get all movies and all residents, in the details screen(serverside).
