@@ -22,4 +22,8 @@ interface PlanetsResponse {
     results: Planet[];
 }
 
-export type { Planet, PlanetsResponse };
+interface People {
+    name: string;
+}
+
+export type { Planet, PlanetsResponse, People };
